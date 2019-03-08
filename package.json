@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon --exec babel-node index.js"
+    "server": "nodemon --exec babel-node index.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,7 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
+    "apollo-boost": "^0.3.1",
     "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
     "cors": "^2.8.5",
@@ -21,12 +24,13 @@
     "graphql": "^14.1.1",
     "graphql-tools": "^4.0.4",
     "graphql-yoga": "^1.17.4",
-    "lodash": "^4.17.11",
     "merge-graphql-schemas": "^1.5.8",
-    "mongodb": "^3.1.13",
-    "mongoose": "^5.4.17",
     "nodemon": "^1.18.10",
     "pg": "^7.8.2",
+    "react": "^16.8.4",
+    "react-apollo": "^2.5.2",
+    "react-dom": "^16.8.4",
+    "react-scripts": "^2.1.8",
     "sequelize": "^4.43.0"
   },
   "devDependencies": {

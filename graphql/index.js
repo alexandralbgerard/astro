@@ -6,6 +6,7 @@ const {
   GraphQLSchema,
   GraphQLID,
   GraphQLNonNull,
+  GraphQLList,
 } = graphql;
 
 const AstrologyType = new GraphQLObjectType({
@@ -34,6 +35,12 @@ const RootQuery = new GraphQLObjectType({
             sign: args.sign,
           },
         });
+      },
+    },
+    AllAstrology: {
+      type: new GraphQLList(AstrologyType),
+      resolve() {
+        return Astrology.findAll();
       },
     },
   },

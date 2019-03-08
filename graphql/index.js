@@ -1,5 +1,5 @@
 const graphql = require('graphql');
-const Astrology = require('../postgres/models/Astrology');
+const Astrology = require('../server/postgres/models/Astrology');
 const {
   GraphQLObjectType,
   GraphQLString,

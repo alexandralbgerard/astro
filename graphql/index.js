@@ -9,11 +9,16 @@ const {
 } = graphql;
 
 const AstrologyType = new GraphQLObjectType({
-  name: 'Astrology',
+  name: 'astrology',
   fields: () => ({
     id: { type: GraphQLID },
     sign: { type: GraphQLString },
     dates: { type: GraphQLString },
+    element: { type: GraphQLString },
+    ruler: { type: GraphQLString },
+    stregnths: { type: GraphQLString },
+    weaknesses: { type: GraphQLString },
+    overview: { type: GraphQLString },
   }),
 });
 
@@ -22,9 +27,13 @@ const RootQuery = new GraphQLObjectType({
   fields: {
     AstrologySign: {
       type: AstrologyType,
-      args: { id: { type: GraphQLID } },
+      args: { sign: { type: GraphQLString } },
       resolve(parent, args) {
-        return Astrology.findById(args.id);
+        return Astrology.findOne({
+          where: {
+            sign: args.sign,
+          },
+        });
       },
     },
   },
@@ -38,11 +47,21 @@ const Mutation = new GraphQLObjectType({
       args: {
         sign: { type: new GraphQLNonNull(GraphQLString) },
         dates: { type: new GraphQLNonNull(GraphQLString) },
+        element: { type: new GraphQLNonNull(GraphQLString) },
+        ruler: { type: new GraphQLNonNull(GraphQLString) },
+        stregnths: { type: new GraphQLNonNull(GraphQLString) },
+        weaknesses: { type: new GraphQLNonNull(GraphQLString) },
+        overview: { type: new GraphQLNonNull(GraphQLString) },
       },
       resolve(parent, args) {
         let sign = new Astrology({
           sign: args.sign,
           dates: args.dates,
+          element: args.element,
+          ruler: args.ruler,
+          stregnths: args.stregnths,
+          weaknesses: args.weaknesses,
+          overview: args.overview,
         });
         return sign.save();
       },

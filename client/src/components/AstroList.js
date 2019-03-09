@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import { getAllAstrosQuery } from '../queries/queries';
 import AstroDetail from './AstroDetail';
+import '../../src/index.css';
 
 class AstroList extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class AstroList extends Component {
           key={astro.id}
           onClick={() => this.setState({ selected: astro.sign })}
         >
-          {astro.sign}, {astro.dates}
+          {astro.sign}
         </li>
       ));
     } else {
@@ -31,7 +32,7 @@ class AstroList extends Component {
   render() {
     console.log('THIS.PROPS.DATA', this.props.data);
     return (
-      <div>
+      <div id="allastro">
         <ul id="astro-list">{this.displayAstros()}</ul>
         {this.state.selected && <AstroDetail sign={this.state.selected} />}
       </div>

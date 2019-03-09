@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { graphql, compose } from 'react-apollo';
 import { addAstroMutation, getAllAstrosQuery } from '../queries/queries';
+import '../../src/index.css';
 
 class AddAstro extends Component {
   constructor() {
@@ -34,7 +35,7 @@ class AddAstro extends Component {
 
   render() {
     return (
-      <form id="add-sign" onSubmit={this.submitForm.bind(this)}>
+      <form id="formastro" onSubmit={this.submitForm.bind(this)}>
         <div className="field">
           <label>Sign:</label>
           <input
@@ -85,7 +86,7 @@ class AddAstro extends Component {
           />
         </div>
 
-        <button type="submit">+</button>
+        <button type="submit">submit</button>
       </form>
     );
   }

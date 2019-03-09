@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import { getAstroSignQuery } from '../queries/queries';
+import '../../src/index.css';
 
 class AstroDetail extends Component {
   displayAstroDetails() {
@@ -8,16 +9,24 @@ class AstroDetail extends Component {
     if (AstrologySign) {
       return (
         <div>
-          <p>{AstrologySign.dates}</p>
-          <p>{AstrologySign.element}</p>
-          <p>{AstrologySign.ruler}</p>
+          <h2>{AstrologySign.sign}</h2>
+          <p className="bold">{AstrologySign.dates}</p>
+          <p>
+            <b>Element:</b> {AstrologySign.element}
+          </p>
+          <p>
+            <b>Ruler:</b> {AstrologySign.ruler}
+          </p>
+          <p className="bold">Stregnths:</p>
           <p>{AstrologySign.stregnths}</p>
+          <p className="bold">Weaknesses:</p>
           <p>{AstrologySign.weaknesses}</p>
+          <p className="bold">Overview:</p>
           <p>{AstrologySign.overview}</p>
         </div>
       );
     } else {
-      return <div>No book selected...</div>;
+      return <div>Select a sign...</div>;
     }
   }
   render() {

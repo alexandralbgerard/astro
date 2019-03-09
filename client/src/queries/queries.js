@@ -23,7 +23,7 @@ const getAstroSignQuery = gql`
 `;
 
 const addAstroMutation = gql`
-  mutation addAstrology(
+  mutation AddAstro(
     $sign: String!
     $dates: String!
     $element: String!
@@ -32,13 +32,23 @@ const addAstroMutation = gql`
     $weaknesses: String!
     $overview: String!
   ) {
-    sign
-    dates
-    element
-    ruler
-    stregnths
-    weaknesses
-    overview
+    addAstrology(
+      sign: $sign
+      dates: $dates
+      element: $element
+      ruler: $ruler
+      stregnths: $stregnths
+      weaknesses: $weaknesses
+      overview: $overview
+    ) {
+      sign
+      dates
+      element
+      ruler
+      stregnths
+      weaknesses
+      overview
+    }
   }
 `;
 

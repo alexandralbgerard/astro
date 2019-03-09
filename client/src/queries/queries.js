@@ -10,7 +10,7 @@ const getAllAstrosQuery = gql`
 `;
 
 const getAstroSignQuery = gql`
-  {
+  query GetAstrologySign($sign: String) {
     AstrologySign(sign: $sign) {
       dates
       element

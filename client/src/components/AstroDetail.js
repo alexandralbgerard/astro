@@ -21,8 +21,8 @@ class AstroDetail extends Component {
           <p>{AstrologySign.stregnths}</p>
           <p className="bold">Weaknesses:</p>
           <p>{AstrologySign.weaknesses}</p>
-          <p className="bold">Overview:</p>
-          <p>{AstrologySign.overview}</p>
+          {/* <p className="bold">Overview:</p>
+          <p>{AstrologySign.overview}</p> */}
         </div>
       );
     } else {

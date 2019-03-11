@@ -36,6 +36,7 @@ class AddAstro extends Component {
   render() {
     return (
       <form id="formastro" onSubmit={this.submitForm.bind(this)}>
+        <p>Summon a Sign:</p>
         <div className="field">
           <label>Sign:</label>
           <input
@@ -86,7 +87,7 @@ class AddAstro extends Component {
           />
         </div>
 
-        <button type="submit">submit</button>
+        <button type="submit">summon</button>
       </form>
     );
   }

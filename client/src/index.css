@@ -47,12 +47,13 @@ body {
 form {
   background: #35364a;
   padding: 20px;
-  padding-top: 1.5em;
+  padding-top: 0.5em;
   width: 22em;
   border-radius: 5px;
   text-align: center;
   align-content: center;
   margin-top: 1em;
+  color: lightgray;
 }
 
 form .field {
@@ -98,7 +99,7 @@ form button:hover {
   top: 21%;
   right: 0;
   width: 35%;
-  height: 67%;
+  height: 71.5%;
   background: #35364a;
   padding: 0 30px;
   overflow: auto;

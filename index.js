@@ -12,10 +12,6 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.get('/', (req, res, next) => {
-//   res.send('hi garrett');
-// });
-
 app.use(
   '/graphql',
   expressGraphQL((req, res) => ({

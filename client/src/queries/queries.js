@@ -18,6 +18,7 @@ const getAstroSignQuery = gql`
       ruler
       stregnths
       weaknesses
+      overview
     }
   }
 `;
